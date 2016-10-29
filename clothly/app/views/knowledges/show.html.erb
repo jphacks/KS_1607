@@ -1,0 +1,27 @@
+<div class="cooking">
+  <h2><%= @knowledge.title %></h2>
+  <div class="cooking-img"><img src="<%= @knowledge.image %>" width="400" height="300"></div>
+  <div class="cooking-recipe">
+   <h3>【詳細】</h3>
+   <p><%= @knowledge.detail %></p>
+  </div>
+  <div class="cooking-recipe">
+   <h3>【コンセプト】</h3>
+   <p><%= @knowledge.concept %></p>
+  </div>
+  <div class="cooking-recipe">
+   <h3>【ヒント・コツ】</h3>
+   <p><%= @knowledge.hint %></p>
+  </div>
+  <div class="cooking-step">
+   <h3>【作り方】</h3>
+   <ol class="ol-style">
+   <% @steps.each do |step| %>
+    <li>
+     <div class="cooking-step-img"><img src="<%= step.sub_image %>" width="400" height="300"></div>
+     <p><%= step.caption %></p>
+    </li>
+   <% end %>
+   </ol>
+  </div>
+</div>

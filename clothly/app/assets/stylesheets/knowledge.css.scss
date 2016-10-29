@@ -1,0 +1,129 @@
+.cooking * {
+ box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ -webkit-box-sizing: border-box;
+}
+.cooking {
+ padding: 1em .5em 0;
+ background: #FFF;
+ color: #4B2E1B;
+}
+.cooking h2, .cooking h3 {
+ color: #4B2E1B;
+}
+.cooking h2 {
+ margin: 0 0 .5em;
+ padding: 0 .5em;
+ font-size: 1.8em;
+ color: #F7761F;
+}
+.cooking h3 {
+ margin: 0 0 1em;
+}
+.cooking-img, .cooking-recipe {
+ float: left;
+ padding: 0 .5em;
+}
+.cooking-img {
+ width: 60%;
+}
+.cooking-recipe {
+ width: 25%;
+}
+.cooking-img img {
+ padding: 5px;
+ border-radius: 3px;
+ background: #fff;
+}
+.cooking-recipe ul {
+ position: relative;
+ top: .8em;
+}
+.cooking-recipe li {
+ border-top: #994C00 1px dotted;
+ text-align: right;
+}
+.cooking-recipe li span, .cooking-recipe li i {
+ position: relative;
+ top: -.8em;
+ background: #FFF;
+}
+.cooking-recipe li span {
+ float: left;
+ padding-right: .5em;
+}
+.cooking-recipe li i {
+ padding-left: .5em;
+ font-style: normal;
+}
+.cooking-step {
+ clear: both;
+ padding-top: 1em;
+}
+.cooking-step h3 {
+ padding: 0 .5em;
+}
+.cooking-step ol {
+ font-size: 0;
+}
+.cooking-step li {
+ display: inline-block;
+ width: 25%;
+ margin-bottom: 1em;
+ padding: 0 .5em;
+ font-size: 14px;
+ vertical-align: top;
+}
+.cooking-step-img img {
+ border-radius: 3px;
+}
+.cooking-step li p {
+ margin-top: 1em;
+}
+.ol-style {
+ counter-reset: step-img;
+ list-style: none;
+ padding-left: 0;
+}
+.ol-style div, .cooking-step li p {
+ position: relative;
+ padding:0 .3em;
+}
+.ol-style div:before {
+ content: counter(step-img) "";
+ counter-increment: step-img;
+ position: absolute;
+ top: -.5em;
+ left: -.2em;
+ width: 1.8em;
+ height: 1.8em;
+ background: #F7761F;
+ border-radius: 50px;
+ color: #fff;
+ line-height: 1.8;
+ text-align: center;
+}
+@media screen and (max-width: 50em) {
+.cooking-step li {
+ width: 33.33333%;
+}
+}
+@media screen and (max-width: 45em) {
+.cooking-img, .cooking-recipe {
+ float: none;
+ width: 100%;
+}
+.cooking h3 {
+ margin-top: 1em;
+}
+}
+@media screen and (max-width: 40em) {
+.cooking-step li {
+ width: 50%;
+}
+}
+@media screen and (max-width: 30em) {
+.cooking-step li {
+ width: 100%;
+}
+}
