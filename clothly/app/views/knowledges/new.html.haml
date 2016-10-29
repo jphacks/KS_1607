@@ -1,0 +1,44 @@
+%h2 投稿画面
+= form_for(@knowledge) do |f|
+  .field
+    = f.label :title
+  .field
+    = f.text_field :title, placeholder: "title", autofocus: true
+  .field
+    = f.label :image
+    %br/
+  .field
+    = f.file_field :image
+  .field
+    = f.label :detail
+    %br/
+  .field
+    = f.text_field :detail, placeholder: "詳細", autofocus: true
+  .field
+    = f.label :hint
+  .field
+    = f.text_field :hint, placeholder: "コツ・ポイント", autofocus: true
+    %br/
+
+  .field
+    - 4.times do |i|
+      =f.fields_for :steps do |step_form|
+        #{i + 1}
+        = step_form.file_field :sub_image
+        = step_form.text_field :caption, placeholder: "caption"
+        = step_form.hidden_field :count, value: i + 1
+  .field
+    - 4.times do |i|
+      =f.fields_for :steps do |step_form|
+        #{i + 5}
+        = step_form.file_field :sub_image
+        = step_form.text_field :caption, placeholder: "caption"
+        = step_form.hidden_field :count, value: i + 5
+  .field
+    = f.label :concept
+    %br/
+
+  .field
+    = f.text_field :concept, placeholder: "concept", autofocus: true
+  .actions
+    = f.submit "Publish"
