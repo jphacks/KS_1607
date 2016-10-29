@@ -1,6 +1,7 @@
 %header
   %nav.navbar.navbar-default.navbar-fixed-top
     .container-fluid
+    - if user_signed_in?
       %ul.nav.navbar-nav.navbar-right
         %li.dropdown
           %a.dropdown-toggle{aria: { expanded: false}, data: { toggle: :dropdown }, href: "#", role: "button"}
@@ -11,6 +12,8 @@
               = link_to 'My page', user_path(current_user.id)
             %li
               =link_to 'Profile Edit', edit_user_path(current_user.id)
+            %li
+              =link_to 'Logout', destroy_user_session_path, method: :delete
         %li
           = link_to 'ナレッジを書く', new_knowledge_path
           -# %form{:role => "search"}
