@@ -18,7 +18,7 @@ class KnowledgesController < ApplicationController
 
   def create
     @knowledge = Knowledge.create(knowledge_params)
-    redirect_to root_path
+    redirect_to knowledge_path(@knowledge)
   end
 
   def edit
@@ -29,7 +29,7 @@ class KnowledgesController < ApplicationController
   def update
     knowledge = Knowledge.find(params[:id])
     knowledge.update(knowledge_params)
-    redirect_to root_path
+    redirect_to knowledge_path(knowledge)
   end
 
   def destroy
