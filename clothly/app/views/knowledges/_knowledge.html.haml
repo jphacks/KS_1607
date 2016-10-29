@@ -1,0 +1,5 @@
+- knowledges.each do |knowledge|
+  .col-md-3
+    = link_to image_tag(knowledge.image, size: '150x150'), knowledge_path(knowledge)
+    .col-md-12
+      = link_to knowledge.title

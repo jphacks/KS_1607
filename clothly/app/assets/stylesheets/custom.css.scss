@@ -1,3 +1,12 @@
+@font-face{
+  font-family:'Glyphicons Halflings';
+  src: image-url("bootstrap/glyphicons-halflings-regular.eot");
+  src: image-url("bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"),
+       image-url("bootstrap/glyphicons-halflings-regular.woff") format("woff"),
+       image-url("bootstrap/glyphicons-halflings-regular.ttf") format("truetype"),
+       image-url("bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg")
+}
+
 .img-responsive-overwrite{
   margin: 0 auto;
 }
@@ -5,4 +14,30 @@
 .list{
   list-style: none;
   font-size: 16px;
+}
+
+#menu ul{
+margin: 0;
+padding: 0;
+list-style: none;
+}
+#menu li{
+padding: 0;
+margin: 0;
+}
+#menu li a{
+display: block;
+text-decoration: none;
+border-bottom: 0.5px solid #30B1C7;
+color: #333;
+width: 180px;
+height: 32px;
+padding: 4px;
+text-align: left;
+font-size: 16px;
+font-weight: bold;
+}
+#menu li a:hover{
+display: block;
+text-decoration: underline;
 }
