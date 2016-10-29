@@ -6,6 +6,12 @@ class KnowledgesController < ApplicationController
     @knowledge.steps.build
   end
 
+  def show
+    @knowledge = Knowledge.find(params[:id])
+    @steps = @knowledge.steps
+    @user = @knowledge.user
+  end
+
   def create
     @knowledge = Knowledge.create(knowledge_params)
   end
