@@ -1,0 +1,3 @@
+$('li.active').removeClass('active');
+$('#js-rendering-field').html("#{j(render partial: 'knowledges/knowledge', locals: { knowledges: @knowledges })}");
+$('.ranking').addClass('active');
