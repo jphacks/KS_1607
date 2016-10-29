@@ -1,4 +1,5 @@
 class KnowledgesController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @knowledge = Knowledge.new
