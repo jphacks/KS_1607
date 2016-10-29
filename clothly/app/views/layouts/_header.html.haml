@@ -2,10 +2,15 @@
   %nav.navbar.navbar-default.navbar-fixed-top
     .container-fluid
       %ul.nav.navbar-nav.navbar-right
+        %li.dropdown
+          %a.dropdown-toggle{aria: { expanded: false}, data: { toggle: :dropdown }, href: "#", role: "button"}
+            = current_user.nickname
+            %span.caret
+          %ul.dropdown-menu{role: "menu"}
+            %li
+              = link_to 'My page', user_path(current_user.id)
         %li
-          = link_to current_user.nickname, user_path(current_user.id)
-        %li
-          = link_to 'ナレッジを書く', '#'
+          = link_to 'ナレッジを書く', new_knowledge_path
           -# %form{:role => "search"}
           -#   %input.form-control{:placeholder => "例: タオル たたみ方", :type => "text"}/
           -#   %span.input-group-btn
