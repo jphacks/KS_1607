@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:show, :edit, :update]
 
   def show
+    @knowledges = Knowledge.order('created_at DESC').limit(5)
   end
 
   def edit
