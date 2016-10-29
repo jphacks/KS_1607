@@ -1,6 +1,10 @@
 class KnowledgesController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @knowledges = Knowledge.order('created_at DESC').limit(5)
+  end
+
   def new
     @knowledge = Knowledge.new
     @knowledge.steps.build
