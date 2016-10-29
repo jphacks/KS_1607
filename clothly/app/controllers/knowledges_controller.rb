@@ -26,6 +26,14 @@ class KnowledgesController < ApplicationController
     knowledge.update(knowledge_params)
   end
 
+  def destroy
+    knowledge = Knowledge.find(params[:id])
+    if knowledge.user_id == current_user.id
+      knowledge.destroy
+    end
+    redirect_to root_path
+  end
+
   private
   def knowledge_params
     params.require(:knowledge).permit(
