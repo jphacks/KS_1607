@@ -16,6 +16,24 @@ class KnowledgesController < ApplicationController
     @knowledge = Knowledge.create(knowledge_params)
   end
 
+  def edit
+    @knowledge = Knowledge.find(params[:id])
+    @steps = @knowledge.steps
+  end
+
+  def update
+    knowledge = Knowledge.find(params[:id])
+    knowledge.update(knowledge_params)
+  end
+
+  def destroy
+    knowledge = Knowledge.find(params[:id])
+    if knowledge.user_id == current_user.id
+      knowledge.destroy
+    end
+    redirect_to root_path
+  end
+
   private
   def knowledge_params
     params.require(:knowledge).permit(

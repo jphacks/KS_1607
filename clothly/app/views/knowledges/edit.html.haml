@@ -1,0 +1,38 @@
+%h2 編集画面
+= form_for(@knowledge, method: :patch) do |f|
+  .field
+    = f.label :title
+  .field
+    = f.text_field :title, placeholder: "title", autofocus: true
+  .field
+    = f.label :image
+    %br/
+  .field
+    = f.file_field :image
+  .field
+    = f.label :detail
+    %br/
+  .field
+    = f.text_field :detail, placeholder: "詳細", autofocus: true
+  .field
+    = f.label :hint
+  .field
+    = f.text_field :hint, placeholder: "コツ・ポイント", autofocus: true
+    %br/
+
+  .field
+    = f.fields_for :steps, @steps.each_with_index(1) do |step_form, i|
+      = i
+      = step_form.file_field :sub_image
+      = step_form.text_field :caption, placeholder: "caption"
+      = step_form.hidden_field :count, value: i
+
+  .field
+    = f.label :concept
+    %br/
+
+  .field
+    = f.text_field :concept, placeholder: "concept", autofocus: true
+  .actions
+    = f.submit "Publish"
+
