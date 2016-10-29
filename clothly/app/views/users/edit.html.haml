@@ -1,19 +1,21 @@
-%h2 Edit Profile
-= form_for @user do |f|
-  .field
-    = f.label :Username
-  .field
-    = f.text_field :nickname, placeholder: "Username", autofocus: true
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, placeholder: "user-email", autofocus: true
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, placeholder: "Password", autocomplete: "off"
-  .actions
-    = f.submit "Save"
+.text-center
+  %h2 Edit Profile
+  = form_for @user do |f|
+    .field
+      = f.label :Username
+    .field
+      = f.text_field :nickname, placeholder: "Username", autofocus: true
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, placeholder: "user-email", autofocus: true
+    .field
+      = f.label :password
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length} characters minimum)
+      %br/
+      = f.password_field :password, placeholder: "Password", autocomplete: "off"
+    .actions
+      = f.submit "Save"
+      
