@@ -3,7 +3,7 @@
     .container-fluid
       %ul.nav.navbar-nav.navbar-right
         %li
-          = link_to current_user.nickname, '#'
+          = link_to current_user.nickname, user_path(current_user.id)
         %li
           = link_to 'ナレッジを書く', '#'
           -# %form{:role => "search"}
