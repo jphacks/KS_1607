@@ -1,0 +1,22 @@
+.container-fluid
+  .cooking
+    %h2= @knowledge.title
+    .cooking-img
+      = image_tag @knowledge.image, class: 'img-thumbnail', style:'max-width:800px; max-height:300px;'
+    .cooking-recipe
+      %h2 詳細
+      %p= @knowledge.detail
+    .cooking-recipe
+      %h2 コンセプト
+      %p= @knowledge.concept
+    .cooking-recipe
+      %h2 ヒント・コツ
+      %p= @knowledge.hint
+    .cooking-step
+      %h2 作り方
+      %ol.ol-style
+        - @steps.each do |step|
+          %li
+            .cooking-step-img
+              = image_tag step.sub_image, class: 'img-responsive'
+            %p= step.caption
