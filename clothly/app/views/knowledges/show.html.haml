@@ -8,13 +8,13 @@
         = render partial: 'like', locals: { knowledge: @knowledge }
     .cooking-recipe
       %h2 詳細
-      %p= @knowledge.detail
+      %p.description= @knowledge.detail
     .cooking-recipe
       %h2 コンセプト
-      %p= @knowledge.concept
+      %p.description= @knowledge.concept
     .cooking-recipe
       %h2 ヒント・コツ
-      %p= @knowledge.hint
+      %p.description= @knowledge.hint
     .cooking-step
       %ol.ol-style
         - @steps.each do |step|
