@@ -14,6 +14,7 @@ class KnowledgesController < ApplicationController
     @knowledge = Knowledge.find(params[:id])
     @steps = @knowledge.steps
     @user = @knowledge.user
+    @comment = Comment.new
   end
 
   def create

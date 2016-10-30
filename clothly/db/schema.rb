@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161030034528) do
+ActiveRecord::Schema.define(version: 20161030044146) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "text",         limit: 65535
+    t.integer  "user_id",      limit: 4
+    t.integer  "knowledge_id", limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["knowledge_id"], name: "index_comments_on_knowledge_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "knowledges", force: :cascade do |t|
     t.string   "title",       limit: 255
