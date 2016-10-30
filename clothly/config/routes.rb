@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     get '/recommend' => 'sorts#recommend'
   end
 
-  resources :knowledges
+  resources :knowledges do
+    resources :likes, only: [:create, :destroy]
+  end
+
   resources :users, only: [:show, :edit, :update]
 end
