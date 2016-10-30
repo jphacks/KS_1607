@@ -1,11 +1,11 @@
-.col-md-6.text-right
-  #like-button
-    = render partial: 'like', locals: { knowledge: @knowledge }
 .container-fluid
   .cooking
     %h2= @knowledge.title
     .cooking-img
       = image_tag @knowledge.image, class: 'img-thumbnail', style:'max-width:800px; max-height:300px;'
+    .cooking-recipe
+      #like-button
+        = render partial: 'like', locals: { knowledge: @knowledge }
     .cooking-recipe
       %h2 詳細
       %p= @knowledge.detail
@@ -22,4 +22,4 @@
           %li
             .cooking-step-img
               = image_tag step.sub_image, class: 'img-responsive'
-            %p= step.caption
+            %p.description= step.caption
